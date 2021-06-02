@@ -7,11 +7,11 @@ public class Shooting : MonoBehaviour
     //VARS
     public Camera fpsCam;
     public float range;
-    public KeyCode Key;
+    public KeyCode sKey;
 
     void Update()
     {
-        if (Input.GetKeyDown(Key))
+        if (Input.GetKeyDown(sKey))
         {
             Shoot();
         }
@@ -25,6 +25,10 @@ public class Shooting : MonoBehaviour
             if (hit.transform.gameObject.layer == 9)
             {
                 hit.transform.SendMessage("HitByRay");
+            }
+            if(hit.transform.gameObject.layer == 10)
+            {
+                hit.transform.SendMessage("StartGameNow");
             }
             Debug.Log(hit.transform.name);
         }
