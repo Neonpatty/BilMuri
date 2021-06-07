@@ -6,15 +6,35 @@ public class Shooting : MonoBehaviour
 {
     //VARS
     public Camera fpsCam;
-    public float range;
+    public float range;    
+    public float fireRate;
     public KeyCode sKey;
+    public AudioSource gunShot;
+    public AudioSource gunCock;
+    public AudioSource shotHit;
+    public AudioSource missHit;
+    public GameObject pHit;
+    
+    private float nextTimeFire = 0f;
 
+    //REFS
+    public PauseMenu pM;
+    
     void Update()
     {
-        if (Input.GetKeyDown(sKey))
+        if (pM.gameIsPaused == false)
         {
-            Shoot();
-        }
+            if (nextTimeFire <= Time.time)
+            {
+                if (Input.GetKeyDown(sKey))
+                {
+                    Shoot();
+                    gunShot.Play();
+                    gunCock.PlayDelayed(0.5f);
+                    nextTimeFire = Time.time + fireRate;
+                }
+            }
+        }            
     }
 
     void Shoot()
@@ -22,15 +42,24 @@ public class Shooting : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+            Debug.Log(hit.transform.name);            
             if (hit.transform.gameObject.layer == 9)
             {
+                shotHit.Play();
+                
                 hit.transform.SendMessage("HitByRay");
             }
-            if(hit.transform.gameObject.layer == 10)
+            else if(hit.transform.gameObject.layer == 10)
             {
                 hit.transform.SendMessage("StartGameNow");
             }
-            Debug.Log(hit.transform.name);
+            else
+            {
+                missHit.Play();
+            }
+            
+            GameObject impactGo = Instantiate(pHit, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(impactGo, 2f);
         }
     }
 }

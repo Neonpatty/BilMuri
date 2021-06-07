@@ -7,23 +7,17 @@ public class GivePoints : MonoBehaviour
 {
     //VARS
     public int mSender;
-    public int pValue;
     public int score = 0;
     public Text points;
+    public Timer tR;
 
-    private void Start()
+    public void AwardPoints(int pValue)
     {
-        EventManager.m_instance.onAwardPoints.AddListener(AwardPoints);
-    }
-
-    public void AwardPoints(int sender)
-    {
-        if (mSender == sender)
+        if(tR.timerRunning == true)
         {
             score += pValue;
             points.text = score.ToString();
             Debug.Log("i have been hit");
         }
-
     }
 }

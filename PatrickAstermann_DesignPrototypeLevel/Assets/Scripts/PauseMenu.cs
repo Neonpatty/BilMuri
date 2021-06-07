@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     //VARS
-    public static bool gameIsPaused = false;
+    public bool gameIsPaused = false;
     public KeyCode pKey;
     public GameObject pauseMenuUI;
 
@@ -38,7 +38,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;       
     }
 
     public void LoadMenu()
