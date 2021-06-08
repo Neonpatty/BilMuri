@@ -10,9 +10,14 @@ public class Timer : MonoBehaviour
     public bool timerRunning = false;
     public Text timerText;
 
+    //REFS
+    public EndScreen eS;
+    public AnimationPlay aP; 
+
     public void StartGameNow()
     {
         timerRunning = true;
+        aP.PlayAni();
     }
 
     void Update()
@@ -29,6 +34,7 @@ public class Timer : MonoBehaviour
                 Debug.Log("Time Has Run Out");
                 timeRemaining = 0;
                 timerRunning = false;
+                eS.EndGame();
             }
         }
     }
