@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GivePoints : MonoBehaviour
 {
     //VARS
-    public int mSender;
     public int score = 0;
     public Text points;
     public Timer tR;
