@@ -13,7 +13,6 @@ public class Shooting : MonoBehaviour
     public AudioSource shotHit;
     public AudioSource missHit;
     public GameObject pHit;
-    public RaycastHit hit;
 
     private float nextTimeFire = 0f;
 
