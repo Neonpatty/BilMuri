@@ -13,7 +13,9 @@ public class AnimationPlay : MonoBehaviour
     public Animator udr1;
     public Animator udr2;
     public Animator sSign;
-
+    public Animator nCog1;
+    public Animator nCog2;
+    public Animator target1000;
     //REFS
     public Timer tR;
 
@@ -28,6 +30,9 @@ public class AnimationPlay : MonoBehaviour
             udr1.enabled = true;
             udr2.enabled = true;
             sSign.enabled = true;
+            nCog1.enabled = true;
+            nCog2.enabled = true;
+            target1000.enabled = true;
         }
     }
 }
