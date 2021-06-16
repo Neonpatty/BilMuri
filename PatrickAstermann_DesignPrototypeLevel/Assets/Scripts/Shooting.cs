@@ -11,8 +11,10 @@ public class Shooting : MonoBehaviour
     public AudioSource gunShot; // audio source for gun fire
     public AudioSource gunCock; // audio source for gun reload
     public AudioSource shotHit; // audio source for when shot hits
+    public AudioSource shotN; //auido source for when you hit a - target
     public AudioSource missHit; // audio source for when shot misses
     public GameObject pHit; //object that the raycast hits
+    public RaycastHit hit; //Information back from the raycast
 
     private float nextTimeFire = 0f; //locked variable for fire rate
 
@@ -40,7 +42,7 @@ public class Shooting : MonoBehaviour
     //this fires a raycast every time the the inout key is hit and gets back information from hit object
     void Shoot()
     {
-        RaycastHit hit;
+        
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 1000))
         {
             Debug.Log(hit.transform.name);
@@ -49,6 +51,11 @@ public class Shooting : MonoBehaviour
             {
                 shotHit.Play();
 
+                hit.transform.SendMessage("HitByRay");
+            }
+            else if(hit.transform.gameObject.layer == 12)
+            {
+                shotN.Play();
                 hit.transform.SendMessage("HitByRay");
             }
             //if the raycast hits an object with layer 10 it will send a message to another script to fire that off
