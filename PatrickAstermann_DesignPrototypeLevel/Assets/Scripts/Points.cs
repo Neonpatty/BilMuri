@@ -16,16 +16,18 @@ public class Points : MonoBehaviour
     public void HitByRay()
     {
         gP.AwardPoints(pValue);
-        //DestoryAndRespawn();
+        //DestoryItem();
     }
 
-    //public void DestoryAndRespawn()
+    //public void DestoryItem()
     //{
-    //    if(sH.hit.transform.gameObject.layer == 9)
+    //    if (sH.hit.transform.gameObject.layer == 9)
     //    {
     //        gameObject.SetActive(false);
-    //        StartCoroutine(Wait());
-    //        gameObject.SetActive(true);
+    //        if (gameObject == false)
+    //        {
+    //            StartCoroutine(Wait());
+    //        }
     //    }
     //}
 
