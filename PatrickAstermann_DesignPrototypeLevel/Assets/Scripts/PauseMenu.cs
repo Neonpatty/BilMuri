@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     //VARS
-    public bool gameIsPaused = false;
-    public KeyCode pKey;
-    public GameObject pauseMenuUI;
+    public bool gameIsPaused = false; //to state if the game is paused or not
+    public KeyCode pKey; //a key you can set in inspector
+    public GameObject pauseMenuUI; // pause menu GUI
 
+    //if key is hit will open pause menu, if escape hit again will return to game
     void Update()
     {
         if (Input.GetKeyDown(pKey))
@@ -25,6 +26,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
     
+    //if key is hit will close Pause Menu GUI and set game time to stantard time and lock mouse pointer to middle of screen
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -33,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    //if key is hit will bring up Pause Menu GUI, will freeze game time and unlock the mouse point
     void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -41,12 +44,14 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;       
     }
 
+    //will load the main menu scene
     public void LoadMenu()
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
     }
 
+    //will quit the application
     public void QuitGame()
     {
         Debug.Log("Quiting Game...");

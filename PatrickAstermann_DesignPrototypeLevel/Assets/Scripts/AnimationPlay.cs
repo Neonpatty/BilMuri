@@ -5,8 +5,8 @@ using UnityEngine.Animations;
 
 public class AnimationPlay : MonoBehaviour
 {
-    //VARS
-    public Animator rail1;
+    //VARS //all animations
+    public Animator rail1; 
     public Animator rail2;
     public Animator cog1;
     public Animator cog2;
@@ -16,11 +16,14 @@ public class AnimationPlay : MonoBehaviour
     public Animator nCog1;
     public Animator nCog2;
     public Animator target1000;
+   
     //REFS
-    public Timer tR;
-
+    public Timer tR; //reference to Timer Script
+    
+    //will start all animations in scene 
     public void PlayAni()
     {
+        //if timer is running well start all the animations
         if(tR.timerRunning == true)
         {
             rail1.enabled = true;
