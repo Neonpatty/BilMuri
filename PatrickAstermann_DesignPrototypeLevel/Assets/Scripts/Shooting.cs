@@ -50,7 +50,6 @@ public class Shooting : MonoBehaviour
             if (hit.transform.gameObject.layer == 9)
             {
                 shotHit.Play();
-
                 hit.transform.SendMessage("HitByRay");
             }
             else if(hit.transform.gameObject.layer == 12)
