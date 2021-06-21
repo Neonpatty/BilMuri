@@ -16,6 +16,13 @@ public class AnimationPlay : MonoBehaviour
     public Animator nCog1;
     public Animator nCog2;
     public Animator target1000;
+    public Animator targetN10001;
+    public Animator targetN10002;
+    public Animator targetN10003;
+    public Animator target251;
+    public Animator target252;
+    public Animator target253;
+
    
     //REFS
     public Timer tR; //reference to Timer Script
@@ -36,6 +43,12 @@ public class AnimationPlay : MonoBehaviour
             nCog1.enabled = true;
             nCog2.enabled = true;
             target1000.enabled = true;
+            targetN10001.enabled = true;
+            targetN10002.enabled = true;
+            targetN10003.enabled = true;
+            target251.enabled = true;
+            target252.enabled = true;
+            target253.enabled = true;
         }
     }
 }

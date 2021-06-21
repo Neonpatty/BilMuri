@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour
     public AudioSource shotN; //auido source for when you hit a - target
     public AudioSource missHit; // audio source for when shot misses
     public GameObject pHit; //object that the raycast hits
-    public RaycastHit hit; //Information back from the raycast
+    public RaycastHit hit; //Information from the raycast
 
     private float nextTimeFire = 0f; //locked variable for fire rate
 

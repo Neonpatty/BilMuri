@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     public EndScreen eS; //reference to the End Screen Script
     public AnimationPlay aP; //reference to the Animation Play Script
 
-    //will change time running to true and fire off function in Animation Play script
+    //will change timer running to true and fire off function in Animation Play script
     public void StartGameNow()
     {
         timerRunning = true;
@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
         }
     }
 
-    //will take time and convert it  minutes, seconds and text
+    //will take time and convert it  minutes, seconds and to text
     void DisplayTimer(float timeToDisplay)
     {
         timeToDisplay += 1;
