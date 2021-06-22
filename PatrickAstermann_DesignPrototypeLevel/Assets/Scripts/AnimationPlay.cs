@@ -18,10 +18,8 @@ public class AnimationPlay : MonoBehaviour
     public Animator target1000;
     public Animator targetN10001;
     public Animator targetN10002;
-    public Animator targetN10003;
     public Animator target251;
     public Animator target252;
-    public Animator target253;
 
    
     //REFS
@@ -45,10 +43,8 @@ public class AnimationPlay : MonoBehaviour
             target1000.enabled = true;
             targetN10001.enabled = true;
             targetN10002.enabled = true;
-            targetN10003.enabled = true;
             target251.enabled = true;
             target252.enabled = true;
-            target253.enabled = true;
         }
     }
 }

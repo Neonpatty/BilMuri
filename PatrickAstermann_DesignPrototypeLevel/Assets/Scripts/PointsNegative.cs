@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Points : MonoBehaviour
+public class PointsNegative : MonoBehaviour
 {
     //VARS
     public GameObject floatingPoints;
@@ -12,14 +12,12 @@ public class Points : MonoBehaviour
     public GivePoints gP; //reference to give points script
     public Shooting sH; //reference to shooting script
     public Timer tI; //reference to Timer Script
-    public RespawnTarget rT;
 
     //will send hit targets value to the awardpoints function
     public void HitByRay()
     {
         gP.AwardPoints(pValue);
         ShowPoints();
-        rT.HideTarget();
     }
 
     public void ShowPoints()
