@@ -18,6 +18,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // Lock our cursor to the center of screen
+        m_sensitivity = PlayerPrefs.GetFloat("mouseSense");
     }
 
     // Update is called once per frame
@@ -47,5 +48,10 @@ public class MouseLook : MonoBehaviour
     {
         m_camera.localRotation = Quaternion.Euler(m_xRotation, 0f, 0f);
         m_playerObject.Rotate(Vector3.up * m_mousePos.x);
+    }
+
+    public void AdjustSense(float newsense)
+    {
+        m_sensitivity = newsense;
     }
 }

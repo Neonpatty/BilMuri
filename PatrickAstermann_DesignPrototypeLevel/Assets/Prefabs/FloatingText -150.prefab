@@ -51,13 +51,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 524135500369759203, guid: b3014b37ae4fac049a62ef41ed617394, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.3869
+      objectReference: {fileID: 0}
+    - target: {fileID: 524135500369759203, guid: b3014b37ae4fac049a62ef41ed617394, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 17.3869
+      objectReference: {fileID: 0}
+    - target: {fileID: 524135500369759203, guid: b3014b37ae4fac049a62ef41ed617394, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17.3869
+      objectReference: {fileID: 0}
     - target: {fileID: 2137002584615473602, guid: b3014b37ae4fac049a62ef41ed617394, type: 3}
       propertyPath: m_FontSize
-      value: 70
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137002584615473602, guid: b3014b37ae4fac049a62ef41ed617394, type: 3}
+      propertyPath: m_TabSize
+      value: 3.34
       objectReference: {fileID: 0}
     - target: {fileID: 5529342048929992812, guid: b3014b37ae4fac049a62ef41ed617394, type: 3}
       propertyPath: m_Name
-      value: FloatingText -150
+      value: FloatingText -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3014b37ae4fac049a62ef41ed617394, type: 3}

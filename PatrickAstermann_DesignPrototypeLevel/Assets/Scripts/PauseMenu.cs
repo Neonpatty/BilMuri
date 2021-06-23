@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     public bool gameIsPaused = false; //to state if the game is paused or not
     public KeyCode pKey; //a key you can set in inspector
     public GameObject pauseMenuUI; // pause menu GUI
+    public GameObject menu;
+    public GameObject optionsMenu;
 
     //if key is hit will open pause menu, if escape hit again will return to game
     void Update()
@@ -42,6 +44,17 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         gameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;       
+    }
+    public void OptionsMenu()
+    {
+        menu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        menu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
 
     //will load the main menu scene
