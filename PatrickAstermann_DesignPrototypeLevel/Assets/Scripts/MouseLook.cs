@@ -18,7 +18,6 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // Lock our cursor to the center of screen
-        m_sensitivity = PlayerPrefs.GetFloat("mouseSense");
     }
 
     // Update is called once per frame
